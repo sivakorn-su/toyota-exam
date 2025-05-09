@@ -13,7 +13,6 @@ const props = defineProps<{
     };
 }>();
 
-// Initialize the form with the current topic data
 const form = useForm({
     title: props.topic.title,
     content: props.topic.content,
@@ -86,13 +85,23 @@ const submitTopic = () => {
                 </div>
 
 
-                <button
-                    type="submit"
-                    :disabled="form.processing"
-                    class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-md"
-                >
-                    Update Topic
-                </button>
+                <div class="flex gap-4 mt-4">
+                    <button
+                        type="submit"
+                        :disabled="form.processing"
+                        class="px-6 py-3 bg-blue-600 text-white rounded-md"
+                    >
+                        Create Topic
+                    </button>
+
+                    <button
+                        type="button"
+                        @click="() => form.reset()"
+                        class="px-6 py-3 bg-gray-300 text-black rounded-md hover:bg-gray-400"
+                    >
+                        Reset
+                    </button>
+                </div>
             </form>
         </div>
     </AppLayout>

@@ -54,14 +54,14 @@ const deleteTopic = (id: number) => {
                     {{ flash }}
                 </div>
 
-                <!-- Topics list -->
+
                 <ul class="space-y-4">
                     <li
                         v-for="topic in topics"
                         :key="topic.id"
                         class="rounded border p-4 shadow-sm"
                     >
-                        <Link :href="route('topics.show', topic.id)" class="text-gray-300 hover:text-blue-600 underline">
+                        <Link :href="route('topics.show', topic.id)" class="text-gray-600 dark: text-gray-300 hover:text-blue-600 underline">
                             <span class="font-semibold text-2xl">{{ topic.title }}</span>
                         </Link>
                         <p class="mt-1 text-sm text-gray-700">{{ topic.content }}</p>
